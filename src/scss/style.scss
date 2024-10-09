@@ -13,7 +13,7 @@
 //</Иконочные шрифты>=================================
 
 //<Шрифт по умолчанию>=================================
-$fontFamily: "GolosText";
+$fontFamily: "PlusJakartaSans";
 $fontSize: 16px;
 //</Шрифт по умолчанию>=================================
 //</ШРИФТЫ>=================================
@@ -22,28 +22,28 @@ $fontSize: 16px;
 //</Swiper>=================================
 
 //<ПЕРЕМЕННЫЕ>=================================
-$minWidth: 375;
-$maxWidth: 1920; //ширина полотна
-$maxWidthContainer: 1262; //ограничивающий контейнер 1262 +40 padding
+$minWidth: 320;
+$maxWidth: 1440; //ширина полотна
+$maxWidthContainer: 1240; //ограничивающий контейнер 1200 +40 padding
 $md1: 1365.98;
 $md2: 991.98;
 $md3: 767.98;
 $md4: 639.98;
 $md5: 479.98;
 
-$mainColor: #313131;
-$yellowColor: #fbce51;
-$darkGrayColor: #010000;
-$grayColor: #d9d9d9;
-$redColor: #f54932;
-$blueColor: #3057a2;
+$mainColor: #4475f2;
+$grayColor: #5e6282;
+$lightBluColor: #23a6f0;
+$darkBlueColor: #181e4b;
 //</ПЕРЕМЕННЫЕ>=================================
 
 //<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>=================================
 @import "null";
 body {
 	color: $mainColor;
-	line-height: 120%;
+	line-height: 187.5%;
+	font-weight: 500;
+
 	&._lock {
 		overflow: hidden;
 	}
