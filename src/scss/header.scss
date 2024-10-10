@@ -1,6 +1,168 @@
 //<HEADER>=======================================
+.header {
+	// .header__wrapper
+	&__wrapper {
+	}
+	// .header__container
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	// .header__body
+	&__body {
+		@include adaptiv-value("min-height", 168, 60, 1);
 
-//</HEADER>=======================================
+		// min-height: 168px;
+		flex: 0 1 50%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		@include adaptiv-value("padding-right", 67, 0, 1);
+	}
+	// .header__logo
+	&__logo {
+		display: flex;
+		align-items: center;
+		flex: 0 0 80px;
+		position: relative;
+		z-index: 3;
+	}
+	// .header__image
+	&__image {
+		padding: 0px 0px 35% 0px;
+		flex: 0 0 28px;
+		img {
+		}
+	}
+	// .header__name
+	&__name {
+		padding: 0px 10px;
+		color: #000;
+		font-size: 18px;
+		font-weight: 700;
+	}
+	// .header__menu
+	&__menu {
+	}
+	// .header__icon
+	&__icon {
+	}
+}
+//<MENU>=======================================
+.menu {
+	// .menu__list
+	&__list {
+		@media (min-width: ($md5+px)) {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+		}
+		@include adaptiv-value("margin-right", -10, -5, 1);
+		@include adaptiv-value("margin-left", -10, -5, 1);
+	}
+	// .menu__item
+	&__item {
+		&:not(:last-child) {
+			@include adaptiv-value("margin-right", 10, 0, 1);
+			@include adaptiv-value("margin-left", 10, 0, 1);
+		}
+	}
+	// .menu__link
+	&__link {
+		color: $lightGrayColor;
+		padding: 10px;
+		font-size: 14px;
+		font-weight: 400;
+		text-transform: capitalize;
+		transition: color 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $hoverCololr;
+			}
+		}
+	}
+}
+//</MENU>=======================================
+.menu-body {
+	@media (max-width: ($md5+px)) {
+		@include adaptiv-value("padding-top", 167, 60, 1);
+		transition: left 0.3s ease 0s;
+		position: fixed;
+		z-index: 2;
+		top: 0;
+		left: -110%;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		background-color: $mainColor;
+		&._active {
+			left: 0;
+		}
+		// .menu__list
+		.menu__list {
+		}
+		// .menu__item
+		.menu__item {
+			&:not(:last-child) {
+				margin: 0px 0px calc(42px / 30px * 1em) 0px;
+			}
+		}
+		// .menu__link
+		.menu__link {
+			@include adaptiv-value("font-size", 14, 32, 1);
+			// font-size: 42px;
+			font-weight: 700;
+		}
+	}
+}
 
 //<BURGER>=======================================
+.icon-menu {
+	display: none;
+	@media (max-width: ($md5 + px)) {
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 18px;
+		top: 0px;
+		left: 0px;
+		cursor: pointer;
+		z-index: 5;
+		margin: 0px 10px;
+		pointer-events: auto;
+		span {
+			position: absolute;
+
+			width: 100%;
+			height: 2px;
+			top: calc(50% - 1px);
+			left: 0;
+			background-color: #000;
+			transition: all 0.3s ease 0s;
+			&:first-child {
+				top: 0;
+			}
+			&:last-child {
+				top: auto;
+				bottom: 0px;
+			}
+		}
+		&._active {
+			span {
+				transform: scale(0);
+				&:first-child {
+					transform: rotate(-45deg);
+					top: calc(50% - 1px);
+				}
+				&:last-child {
+					transform: rotate(45deg);
+					bottom: calc(50% - 1px);
+				}
+			}
+		}
+	}
+}
 //</BURGER>=================================
+//</Ь>=======================================
