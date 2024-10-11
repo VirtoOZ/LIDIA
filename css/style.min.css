@@ -165,40 +165,6 @@ body._lock {
 
 /* даем контенту серый цвет, что бы потом при
 ховере можно было вернуть цвет */
-.header__wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-@media (max-width: 479.98px) {
-  .header__wrapper::before {
-    content: "";
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
-    top: 0;
-    left: -110%;
-    width: 96%;
-    z-index: 3;
-    min-height: 168px;
-    background-color: #4475f2;
-    transition: all 0.3s ease 0s;
-  }
-}
-@media (max-width: 479.98px) and (max-width: 1240px) {
-  .header__wrapper::before {
-    min-height: calc(60px + 108 * ((100vw - 375px) / 865));
-  }
-}
-@media (max-width: 479.98px) {
-  .header__wrapper._active::before {
-    opacity: 1;
-    visibility: visible;
-    left: 0;
-  }
-}
 .header__container {
   display: flex;
   justify-content: space-between;
@@ -291,17 +257,19 @@ body._lock {
 @media (max-width: 479.98px) {
   .menu-body {
     padding-top: 167px;
-    transition: left 0.3s ease 0s;
-    position: absolute;
+    position: fixed;
     z-index: 2;
+    opacity: 0;
+    visibility: hidden;
     top: 0;
-    left: -110%;
+    left: -100%;
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     background-color: #4475f2;
     overflow: auto;
+    transition: all 0.3s ease 0s;
   }
 }
 @media (max-width: 479.98px) and (max-width: 1240px) {
@@ -310,25 +278,46 @@ body._lock {
   }
 }
 @media (max-width: 479.98px) {
-  .menu-body._active {
-    left: 0;
+  .menu-body::before {
+    content: "";
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    z-index: 3;
+    min-height: 168px;
+    background-color: #4475f2;
+    transition: all 0.3s ease 0s;
+  }
+}
+@media (max-width: 479.98px) and (max-width: 1240px) {
+  .menu-body::before {
+    min-height: calc(60px + 108 * ((100vw - 375px) / 865));
   }
 }
 @media (max-width: 479.98px) {
-  .menu-body .menu__item:not(:last-child) {
+  .menu__item:not(:last-child) {
     margin: 0px 0px 1.4em 0px;
   }
 }
 @media (max-width: 479.98px) {
-  .menu-body .menu__link {
+  .menu__link {
     font-size: 14px;
     font-weight: 700;
   }
 }
 @media (max-width: 479.98px) and (max-width: 1240px) {
-  .menu-body .menu__link {
+  .menu__link {
     font-size: calc(32px + -18 * ((100vw - 375px) / 865));
   }
+}
+.header._menu-open .menu-body::before,
+.header._menu-open .menu-body {
+  opacity: 1;
+  visibility: visible;
+  left: 0;
 }
 
 .icon-menu {
