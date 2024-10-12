@@ -130,12 +130,13 @@
 		// font-size: 42px;
 		font-weight: 700;
 	}
-}
-.header._menu-open .menu-body::before,
-.header._menu-open .menu-body {
-	opacity: 1;
-	visibility: visible;
-	left: 0;
+
+	.header._menu-open .menu-body::before,
+	.header._menu-open .menu-body {
+		opacity: 1;
+		visibility: visible;
+		left: 0;
+	}
 }
 //<BURGER>=======================================
 .icon-menu {
