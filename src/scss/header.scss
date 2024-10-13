@@ -1,6 +1,7 @@
 //<HEADER>=======================================
 .header {
 	position: fixed;
+	z-index: 10;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -154,7 +155,7 @@
 		left: 0px;
 		cursor: pointer;
 		z-index: 5;
-		margin: 0px 10px;
+		margin: 0px 0px 0px 10px;
 		pointer-events: auto;
 		span {
 			pointer-events: none;
