@@ -165,6 +165,12 @@ body._lock {
 
 /* даем контенту серый цвет, что бы потом при
 ховере можно было вернуть цвет */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
 .header__container {
   display: flex;
   justify-content: space-between;
@@ -371,12 +377,59 @@ body._lock {
   margin: 0px 0px 170px 0px;
 }
 
-.main__body {
-  display: flex;
+@media (min-width: 991.98px) {
+  .main__wrapper {
+    position: relative;
+    z-index: 1;
+  }
 }
-.main__content {
+.main__body {
+  padding-top: 168px;
+  position: relative;
+}
+@media (max-width: 1240px) {
+  .main__body {
+    padding-top: calc(60px + 108 * ((100vw - 375px) / 865));
+  }
+}
+@media (min-width: 991.98px) {
+  .main__body {
+    display: flex;
+  }
+}
+@media (min-width: 991.98px) {
+  .main__content {
+    flex: 0 1 50%;
+  }
+}
+.main__media {
+  min-height: 540px;
   flex: 0 1 50%;
 }
+.main__blue-element::before, .main__blue-element::after {
+  position: absolute;
+  z-index: -1;
+  display: inline-block;
+  content: "";
+  width: 100vw;
+  height: 100%;
+  bottom: 0;
+  background-color: #4475f2;
+  border-radius: 0 0 0 50px;
+  box-shadow: 0px 30px 60px rgba(71, 74, 87, 0.25);
+}
+.main__blue-element::before {
+  left: calc(50% + 30px);
+  transform: skewX(-23deg);
+  transform-origin: bottom left;
+}
+.main__blue-element::after {
+  left: 50%;
+  width: 100vw;
+  transform: skewX(32deg);
+  transform-origin: top left;
+}
+
 .content__title {
   font-size: 76px;
   font-weight: 800;
@@ -384,6 +437,7 @@ body._lock {
   letter-spacing: -3.04px;
   color: #181e4b;
   margin: 0px 0px 30px 0px;
+  padding: 0px 10px 0px 0px;
 }
 .content__title span {
   font-size: 76px;
@@ -396,11 +450,13 @@ body._lock {
 .content__text {
   max-width: 501px;
   margin: 0px 0px 34px 0px;
+  padding: 0px 10px 0px 0px;
 }
 .content__text p:not(:last-child) {
   margin: 0px 0px 1.875em 0px;
 }
 .content__button {
+  display: inline-block;
   padding: 18px 54px;
   background-color: #4475f2;
   border-radius: 10px;
@@ -408,4 +464,37 @@ body._lock {
   color: #fff;
   font-weight: 700;
   line-height: 156.25%;
+  margin: 0px 0px 30px 0px;
+}
+
+.media__wrapper {
+  position: relative;
+}
+.media__image_1, .media__image_2, .media__image_3, .media__image_4 {
+  border-radius: 5%;
+  display: inline-block;
+  position: absolute;
+  box-shadow: 0px 15px 30px 0px rgba(0, 0, 0, 0.25);
+}
+.media__image_1 {
+  width: 23.8333333333%;
+  padding: 0px 0px 35.7% 0px;
+  left: 39.3333333333%;
+}
+.media__image_2 {
+  width: 25%;
+  padding: 0px 0px 38% 0px;
+  left: 75%;
+  top: 120px;
+}
+.media__image_3 {
+  width: 34.8333333333%;
+  padding: 0px 0px 50.4% 0px;
+  top: 204px;
+}
+.media__image_4 {
+  width: 18%;
+  padding: 0px 0px 27.2% 0px;
+  left: 51.3333333333%;
+  top: 353px;
 }
