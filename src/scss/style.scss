@@ -133,9 +133,7 @@ body {
 	&__media {
 		min-height: 540px;
 		flex: 0 1 50%;
-		@media (min-width: ($md2+px)) {
-			@include adaptiv-value("padding-top", 168, 60, 1);
-		}
+		@include adaptiv-value("padding-top", 168, 60, 1);
 	}
 }
 .content {
@@ -164,12 +162,9 @@ body {
 	// .content__text
 	&__text {
 		@include adaptiv-value("font-size", 16, 14, 1);
-		max-width: 501px;
+		@include adaptiv-value("width", 501, 300, 1);
 		margin: 0px 0px 34px 0px;
 		padding: 0px 10px 0px 0px;
-		@media (max-width: ($md2+px)) {
-			max-width: 400px;
-		}
 		p {
 			&:not(:last-child) {
 				margin: 0px 0px calc(30px / 16px * 1em) 0px;
@@ -188,6 +183,14 @@ body {
 		// line-height: 25px; /* 156.25% */
 		line-height: calc((25 / 16) * 100%);
 		margin: 0px 0px 30px 0px;
+		transition: all 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				transform: translate(0px, 3px);
+				background-color: $hoverCololr;
+				box-shadow: 0 0 0 $hoverCololr;
+			}
+		}
 	}
 	// .main__blue-element
 	&__blue-element {

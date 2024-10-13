@@ -274,7 +274,7 @@ body._lock {
     height: 100%;
     display: flex;
     justify-content: center;
-    background-color: #5e6282;
+    background-color: #4475f2;
     overflow: auto;
     transition: all 0.3s ease 0s;
   }
@@ -295,7 +295,8 @@ body._lock {
     width: 100%;
     z-index: 3;
     min-height: 168px;
-    background-color: #5e6282;
+    background-color: #4475f2;
+    background: linear-gradient(0deg, #4475f2 0%, #4737ff 100%);
     transition: all 0.3s ease 0s;
   }
 }
@@ -416,13 +417,9 @@ body._lock {
 .main__media {
   min-height: 540px;
   flex: 0 1 50%;
+  padding-top: 168px;
 }
-@media (min-width: 991.98px) {
-  .main__media {
-    padding-top: 168px;
-  }
-}
-@media (min-width: 991.98px) and (max-width: 1240px) {
+@media (max-width: 1240px) {
   .main__media {
     padding-top: calc(60px + 108 * ((100vw - 375px) / 865));
   }
@@ -456,7 +453,7 @@ body._lock {
 }
 .content__text {
   font-size: 16px;
-  max-width: 501px;
+  width: 501px;
   margin: 0px 0px 34px 0px;
   padding: 0px 10px 0px 0px;
 }
@@ -465,9 +462,9 @@ body._lock {
     font-size: calc(14px + 2 * ((100vw - 375px) / 865));
   }
 }
-@media (max-width: 991.98px) {
+@media (max-width: 1240px) {
   .content__text {
-    max-width: 400px;
+    width: calc(300px + 201 * ((100vw - 375px) / 865));
   }
 }
 .content__text p:not(:last-child) {
@@ -483,6 +480,14 @@ body._lock {
   font-weight: 700;
   line-height: 156.25%;
   margin: 0px 0px 30px 0px;
+  transition: all 0.3s ease 0s;
+}
+@media (any-hover: hover) {
+  .content__button:hover {
+    transform: translate(0px, 3px);
+    background-color: #4737ff;
+    box-shadow: 0 0 0 #4737ff;
+  }
 }
 .content__blue-element::before, .content__blue-element::after {
   position: absolute;
