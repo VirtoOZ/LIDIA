@@ -19,10 +19,12 @@
 	@if $maxSize == 1 {
 		font-size: $pcSize + px;
 		@media (max-width: #{$maxWidthContainer + px}) {
-			font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 375px) / #{$maxWidthContainer - 375}));
+			font-size: calc(
+				#{$mobSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$maxWidthContainer - $minWidth})
+			);
 		}
 	} @else {
-		font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 375px) / #{$maxWidth - 375}));
+		font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$maxWidth - $minWidth}));
 	}
 }
 
@@ -51,17 +53,21 @@
 		// только если меньше контейнера
 		#{$property}: $startSize + px;
 		@media (max-width: #{$maxWidthContainer + px}) {
-			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 375px) / #{$maxWidthContainer - 375}));
+			#{$property}: calc(
+				#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$maxWidthContainer - $minWidth})
+			);
 		}
 	} @else if $type==2 {
 		// Только если больше контейнера
 		#{$property}: $startSize + px;
 		@media (min-width: #{$maxWidthContainer + px}) {
-			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 375px) / #{$maxWidth - 375px}));
+			#{$property}: calc(
+				#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$maxWidth - #{$minWidth + px}})
+			);
 		}
 	} @else {
 		// Всегда
-		#{$propety}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 375px) / #{$maxWidth - 375}));
+		#{$propety}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$maxWidth - $minWidth}));
 	}
 }
 // Подключение: @include adaptiv-value("padding", 20, 20, 1);

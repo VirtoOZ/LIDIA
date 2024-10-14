@@ -27,14 +27,20 @@
 	&__logo {
 		display: flex;
 		align-items: center;
-		flex: 0 0 80px;
+		@include adaptiv-value("min-width", 80, 120, 1);
+
+		// width: 80px;
+		// flex: 0 0 80px;
 		position: relative;
 		z-index: 3;
+		@media (max-width: ($md4+px)) {
+			// flex: 0 0 120px;
+		}
 	}
 	// .header__image
 	&__image {
 		padding: 0px 0px 35% 0px;
-		flex: 0 0 28px;
+		flex: 0 0 35%;
 		img {
 		}
 	}
@@ -42,11 +48,13 @@
 	&__name {
 		padding: 0px 10px;
 		color: #000;
-		font-size: 18px;
+		@include adaptiv-value("font-size", 18, 22, 1);
+		// font-size: 18px;
 		font-weight: 700;
 	}
 	// .header__menu
 	&__menu {
+		// margin: 0px 0px 0px 20px;
 	}
 	// .header__icon
 	&__icon {
@@ -60,18 +68,14 @@
 	&__list {
 		@media (min-width: ($md5+px)) {
 			display: flex;
+			justify-content: center;
 			align-items: center;
 			flex-wrap: wrap;
+			column-gap: 10px;
 		}
-		@include adaptiv-value("margin-right", -10, -5, 1);
-		@include adaptiv-value("margin-left", -10, -5, 1);
 	}
 	// .menu__item
 	&__item {
-		&:not(:last-child) {
-			@include adaptiv-value("margin-right", 10, 0, 1);
-			@include adaptiv-value("margin-left", 10, 0, 1);
-		}
 	}
 	// .menu__link
 	&__link {
@@ -89,7 +93,7 @@
 	}
 }
 //</MENU>=======================================
-@media (max-width: ($md5+px)) {
+@media (max-width: ($md4+px)) {
 	.menu-body {
 		@include adaptiv-value("padding-top", 167, 60, 1);
 		position: fixed;
@@ -146,7 +150,7 @@
 //<BURGER>=======================================
 .icon-menu {
 	display: none;
-	@media (max-width: ($md5 + px)) {
+	@media (max-width: ($md4 + px)) {
 		display: block;
 		position: relative;
 		width: 30px;
@@ -157,6 +161,7 @@
 		z-index: 5;
 		margin: 0px 0px 0px 10px;
 		pointer-events: auto;
+
 		span {
 			pointer-events: none;
 			position: absolute;
@@ -165,6 +170,7 @@
 			top: calc(50% - 1px);
 			left: 0;
 			background-color: #000;
+			border-radius: 1px;
 			transition: all 0.3s ease 0s;
 			&:first-child {
 				top: 0;
@@ -185,6 +191,14 @@
 				&:last-child {
 					transform: rotate(45deg);
 					bottom: calc(50% - 1px);
+				}
+			}
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				span {
+					box-shadow: 0 0 5px #fff;
+					background-color: $hoverCololr;
 				}
 			}
 		}
