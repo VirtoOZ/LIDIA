@@ -20,7 +20,7 @@
 }
 [class^="_icon-"],
 [class*=" _icon-"] {
-	&:before {
+	&::before {
 		@extend %ic;
 		display: block;
 	}
@@ -28,25 +28,25 @@
 //=======================================
 //из файла css, iconmoon.io
 
-._icon-whishlist:before {
+._icon-wishlist::before {
 	content: "\e900";
 }
-._icon-twitter:before {
+._icon-twitter::before {
 	content: "\e901";
 }
-._icon-search:before {
+._icon-search::before {
 	content: "\e902";
 }
-._icon-instagramm:before {
+._icon-instagramm::before {
 	content: "\e903";
 }
-._icon-facebook:before {
+._icon-facebook::before {
 	content: "\e904";
 }
-._icon-arrow-right:before {
+._icon-arrow-right::before {
 	content: "\e905";
 }
-._icon-review:before {
+._icon-review::before {
 	content: "\e906";
 }
 

@@ -34,6 +34,59 @@
   font-weight: 400;
   font-style: normal;
 }
+@font-face {
+  font-family: "icons";
+  font-display: swap;
+  src: url("../fonts/icons.woff") format("woff"), url("../fonts/icons.woff2#icons") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+[class^=_icon-]::before,
+[class*=" _icon-"]::before {
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^=_icon-]::before,
+[class*=" _icon-"]::before {
+  display: block;
+}
+
+._icon-wishlist::before {
+  content: "\e900";
+}
+
+._icon-twitter::before {
+  content: "\e901";
+}
+
+._icon-search::before {
+  content: "\e902";
+}
+
+._icon-instagramm::before {
+  content: "\e903";
+}
+
+._icon-facebook::before {
+  content: "\e904";
+}
+
+._icon-arrow-right::before {
+  content: "\e905";
+}
+
+._icon-review::before {
+  content: "\e906";
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -718,9 +771,17 @@ body._lock {
   flex-direction: column;
   align-items: center;
 }
-@media (max-width: 767.98px) {
-  .columns-features__item {
-    justify-items: center;
+.columns-features__icon {
+  flex: 1 1 auto;
+}
+@media (any-hover: hover) {
+  .columns-features__icon:hover .columns-features__frame::before {
+    transform: scale(1.2);
+  }
+  .columns-features__icon:hover .columns-features__frame {
+    transform: translate(0px, 3px);
+    background-color: #4737ff;
+    box-shadow: 0 0 15px #4737ff;
   }
 }
 .columns-features__icon:not(:last-child) {
@@ -741,11 +802,13 @@ body._lock {
   align-items: center;
   border-radius: 26px;
   background-color: #4475f2;
+  box-shadow: 0px 30px 60px 0px rgba(71, 74, 87, 0.25);
+  transition: all 0.3s ease 0s;
 }
 .columns-features__frame::before {
   transition: transform 0.3s ease 0s;
-  font-size: 25px;
-  color: #000;
+  font-size: 39px;
+  color: #fff;
 }
 .columns-features__body {
   text-align: center;
