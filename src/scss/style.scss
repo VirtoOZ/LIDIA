@@ -98,8 +98,12 @@ body {
 	&__features {
 		@include adaptiv-value("margin-bottom", 200, 50, 1);
 	}
+	// .page__services
+	&__services {
+	}
 }
 .title-box {
+	@include adaptiv-value("margin-bottom", 90, 35, 1);
 	// .title-box__subtitle
 	&__subtitle {
 		color: $blueColor;
@@ -348,14 +352,13 @@ body {
 }
 //</MAIN>=================================
 
-//<features>=================================
+//<FEATURES>=================================
 .features {
 	// .features__container
 	&__container {
 	}
 	// .features__title
 	&__title {
-		@include adaptiv-value("margin-bottom", 90, 30, 1);
 	}
 	// .features__body
 	&__body {
@@ -438,30 +441,116 @@ body {
 		}
 	}
 }
-//</features>=================================
-//<ОБЩИЕ СТИЛИ>=================================
+//</FEATURES>=================================
+//<SERVICES>=================================
+.services {
+	// .services__container
+	&__container {
+	}
+	// .services__title
+	&__title {
+	}
+	// .services__wrapper
+	&__wrapper {
+	}
+	// .services__column
+	&__column {
+		display: flex;
+		flex-direction: column;
+	}
+	// .services__row
+	&__row {
+		&:not(:last-child) {
+			@include adaptiv-value("margin-bottom", 140, 45, 1);
+		}
+		@media (min-width: ($md3+px)) {
+			display: flex;
+			&:last-child {
+				flex-direction: row-reverse;
+			}
+			&:not(:last-child) {
+				.services-row__content {
+					@include adaptiv-value("margin-right", 64, -60, 1);
+					@include adaptiv-value("margin-left", 125, 0, 1);
+				}
+			}
+		}
+	}
+}
 
-//<MAIN>=================================
+.services-row {
+	// .services-row__item
+	&__item {
+		@media (min-width: ($md3+px)) {
+			flex: 0 1 50%;
+		}
+		@media (max-width: ($md3+px)) {
+			&:not(:last-child) {
+				margin: 0px 0px 20px 0px;
+			}
+		}
+	}
+	// .services-row__image
+	&__image {
+		border-radius: 10px;
+		padding: 0px 0px 66% 0px;
+		box-shadow: 0px 30px 60px 0px rgba(71, 74, 87, 0.25);
+		transition: all 0.3s ease 0s;
+		// img {
+		// 	@media (any-hover: hover) {
+		// 		&:hover {
+		// 			transform: scale(0.1);
+		// 		}
+		// 	}
+		// }
+	}
+	// .services-row__content
+	&__content {
+		@media (min-width: ($md3+px)) {
+			@include adaptiv-value("margin-right", 181, -54, 1);
+		}
+	}
+}
+.row-content {
+	// .row-content__title
+	&__title {
+		color: #000;
+		@include adaptiv-value("font-size", 32, 28, 1);
+		letter-spacing: 0.64px;
+		span {
+			color: $blueColor;
+		}
+		@include adaptiv-value("margin-bottom", 40, 25, 1);
+	}
+	// .row-content__text
+	&__text {
+		p {
+			letter-spacing: 0.32px;
+			&:not(:last-child) {
+				margin: 0px 0px calc(15px / 16px * 1em) 0px;
+			}
+		}
+	}
+}
+//</SERVICES>=================================
 
-//</MAIN>=================================
+//<>=================================
 
-//<VISIT>=================================
+//</>=================================
 
-//</VISIT>=================================
+//<>=================================
 
-//<SESSION>=================================
+//</>=================================
 
-//</SESSION>=================================
+//<>=================================
 
-//<STAGES>=================================
+//</>=================================
 
-//</STAGES>=================================
+//<>=================================
 
-//<PARTICIPANTS>=================================
+//</>=================================
 
-//</PARTICIPANTS>=================================
-
-//<ХЛЕБНЫЕ КРОШКИ>=================================
-//</ХЛЕБНЫЕ КРОШКИ>=================================
+//<>=================================
+//</>=================================
 
 //</ОСНОВНОЙ БЛОК>=================================
