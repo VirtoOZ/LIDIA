@@ -1,3 +1,113 @@
 //<FOOTER>=================================
-
+.footer {
+	// .footer__container
+	&__container {
+	}
+	// .footer__body
+	&__body {
+		@media (max-width: ($md3+px)) {
+			margin: 0px 0px 20px 0px;
+		}
+	}
+	// .footer__top
+	&__top {
+		min-height: 242px;
+	}
+	// .footer__columns
+	&__columns {
+		display: flex;
+		justify-content: space-between;
+		@media (max-width: ($md3+px)) {
+			flex-wrap: wrap;
+			justify-content: center;
+			row-gap: 30px;
+		}
+		@include adaptiv-value("column-gap", 100, 50, 1);
+	}
+	// .footer__column
+	&__column {
+		flex: 0 1 33.333%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	// .footer__bottom
+	&__bottom {
+		min-height: 119px;
+		width: 100vw;
+		background-color: $blueColor;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		// .footer__bottom_text
+		&_text {
+			text-align: center;
+			color: #fff;
+			font-size: 14px;
+			font-weight: 700;
+		}
+	}
+}
+.column-footer {
+	// .column-footer__name
+	&__name {
+		text-align: center;
+		color: #000;
+		font-size: 24px;
+		font-weight: 700;
+		@include adaptiv-value("margin-bottom", 25, 15, 1);
+		@media (max-width: ($md3+px)) {
+			flex: 1 1 auto;
+		}
+	}
+	// .column-footer__content
+	&__content {
+		min-height: 40px;
+		// min-width: 40px;
+		display: flex;
+		align-items: center;
+		color: #000;
+		@include adaptiv-value("font-size", 20, 16, 1);
+		span {
+			@include adaptiv-value("margin-left", 25, 12, 1);
+			@include adaptiv-value("font-size", 42, 30, 1);
+			font-weight: 800;
+		}
+		img {
+			@include adaptiv-value("width", 96, 50, 1);
+		}
+	}
+	// .column-footer__image
+	&__image {
+	}
+	// .column-footer__body
+	&__body {
+		flex: 1 1 auto;
+		display: flex;
+		align-items: center;
+		& > *:not(:last-child) {
+			margin: 0px 15px 0px 0px;
+		}
+	}
+	// .column-footer__twitter
+	&__twitter {
+	}
+	// .column-footer__instagramm
+	&__instagramm {
+	}
+	// .column-footer__facebook
+	&__facebook {
+	}
+	&__twitter,
+	&__instagramm,
+	&__facebook {
+		display: inline-block;
+	}
+	&__twitter::before,
+	&__instagramm::before,
+	&__facebook::before {
+		color: #000;
+		font-size: 40px;
+	}
+}
 //</FOOTER>=================================
